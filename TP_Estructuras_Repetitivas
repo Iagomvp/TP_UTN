@@ -1,0 +1,126 @@
+for x in range(1,100):
+    print(x)
+
+def contar_digitos(numero):
+
+  if numero < 0:
+    numero = abs(numero) 
+
+  if numero == 0:
+    return 1 
+
+  contador = 0
+  while numero > 0:
+    numero //= 10 
+    contador += 1
+
+  return contador
+
+try:
+  numero_input = int(input("Ingresa un número entero: "))
+  resultado = contar_digitos(numero_input)
+  print(f"El número tiene {resultado} dígitos.")
+except ValueError:
+  print("Entrada inválida. Por favor, ingresa un número entero.")
+
+def suma_entre_valores(valor1, valor2):
+  suma = 0
+  if valor1 < valor2:
+    for i in range(valor1 + 1, valor2):
+      suma += i
+  elif valor1 > valor2:
+    for i in range(valor2 + 1, valor1):
+      suma += i
+  else:
+    return 0  
+  return suma
+
+valor1 = int(input("Ingrese el primer valor entero: "))
+valor2 = int(input("Ingrese el segundo valor entero: "))
+
+resultado = suma_entre_valores(valor1, valor2)
+print(f"La suma de los enteros entre {valor1} y {valor2} (excluidos) es: {resultado}")
+
+def suma_numeros():
+    suma = 0 
+    
+    while True:  
+        try:
+            numero = int(input("Ingrese un número entero (o 0 para terminar): "))
+        except ValueError:
+            print("Entrada inválida. Por favor, ingrese un número entero.")
+            continue
+        
+        if numero == 0:
+            break  
+        
+        suma += numero  
+    
+    print(f"La suma total es: {suma}")  
+suma_numeros()
+
+import random
+aleatorio=random.randint(1,10)
+
+while True:
+    num=int(input("ingrese un numero entre 1 y 10: "))
+    if num==aleatorio:
+       print("felicidades adivinaste el numero")
+       break
+    elif num < aleatorio:
+        print("el numero es mayor,intenta nuevamente")
+else:
+    print("el numero es menor,intentalo nuevamente")
+
+print("chua")
+
+for x in range(100,1,-1):
+    print(x)
+
+def suma_rango(numero):
+  suma = 0
+  contador = 0
+  while contador <= numero:
+    suma += contador
+    contador += 1
+  return suma
+numero_usuario = int(input("Ingresa un número entero positivo: "))
+
+if numero_usuario > 0:
+  resultado = suma_rango(numero_usuario)
+  print("La suma de los números desde 0 hasta", numero_usuario, "es:", resultado)
+else:
+  print("El número debe ser positivo.")
+
+pares = 0
+impares = 0
+negativos = 0
+positivos = 0
+
+for i in range(1, 5):
+    numero = int(input(f"Ingrese el número {i}: "))
+    
+    if numero % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+        
+    if numero < 0:
+        negativos += 1
+    elif numero > 0:
+        positivos += 1
+
+print(f"Cantidad de números pares: {pares}")
+print(f"Cantidad de números impares: {impares}")
+print(f"Cantidad de números negativos: {negativos}")
+print(f"Cantidad de números positivos: {positivos}")
+
+numero = int(input("Ingresa un número: "))
+invertido = 0
+
+while numero > 0:
+  digito = numero % 10
+  invertido = (invertido * 10) + digito
+  numero = numero // 10
+
+print("El número invertido es:", invertido)
